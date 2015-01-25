@@ -1,0 +1,44 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "rgbapng";
+@import "compass/utilities/sprites";
+@import "sprites/*.png";
+
+@include all-sprites-sprites;
+
+/* Main */
+
+$default-transition-delay    : false;
+$webkit-font-smoothing       : true;
+
+/* Fonts */
+
+
+
+@include font-face("DIN Bold", font-files("2B7C1E_0_0.ttf", "2B7C1E_0_0.woff", "2B7C1E_0_0.svg"), "2B7C1E_0_0.eot");
+@include font-face("DIN Medium", font-files("2B7C1E_1_0.ttf", "2B7C1E_1_0.woff", "2B7C1E_1_0.svg"), "2B7C1E_1_0.eot");
+@include font-face("DIN Light", font-files("2B7C1E_2_0.ttf", "2B7C1E_2_0.woff", "2B7C1E_2_0.svg"), "2B7C1E_2_0.eot");
+
+$din_b: "DIN Bold";
+$din_m: "DIN Medium";
+$din_l: "DIN Light";
+
+$got_m: "Gotham SSm A", "Gothamm SSm B";
+$got_b: "Gotham SSm A", "Gothamm SSm B";
+
+/* Colors */
+
+$body-color: #fff;
+$logo36-color: #000;
+
+
+$white: #f7f6f6;
+$grey: #eaeaea;
+$black: #4e4e4e;
+$teal: #71bbc6;
+$navy: #474b52;
+$green: #95c090;
+$red: #df6666;
+$yel: #d8c385;
+
+

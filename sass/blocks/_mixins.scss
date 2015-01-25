@@ -1,0 +1,61 @@
+@mixin sprite-link($sprite, $hover-sprite: null) {
+    display: block;
+    width: image-width("sprites/#{$sprite}.png");
+    height: image-height("sprites/#{$sprite}.png");
+
+    @if file_exists("sprites/#{$sprite}.svg") {
+        .no-svg & {
+            @include sprites-sprite($sprite);
+            background-size: auto auto;
+            @if $hover-sprite != null {
+            	&:hover {
+            		@include sprites-sprite($hover-sprite);
+    	        	background-size: auto auto;
+            	}
+            }
+        }
+        background-image: inline-image("sprites/" + $sprite + ".svg");
+        background-size: sprites-sprite-width($sprite) sprites-sprite-height($sprite);
+        @if $hover-sprite != null {
+        	&:hover {
+    	    	background-image: inline-image("sprites/" + $hover-sprite + ".svg");
+    	    	background-size: sprites-sprite-width($hover-sprite) sprites-sprite-height($hover-sprite);
+    	    }
+        }
+    } @else if file_exists("sprites/#{$sprite}_2x.png") {
+        @include sprites-sprite($sprite);
+
+        @media (min--moz-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx) {
+            @include sprites-sprite($sprite + "_2x");
+            background-size: sprites-sprite-width($sprite) sprites-sprite-height($sprite);
+            @if $hover-sprite != null {
+            	&:hover {
+    	            @include sprites-sprite($hover-sprite + "_2x");
+    	            background-size: sprites-sprite-width($hover-sprite) sprites-sprite-height($hover-sprite);
+    	        }
+            }
+        }
+        
+    } @else {
+        @include sprites-sprite($sprite);
+        @if $hover-sprite != null {
+        	@include sprites-sprite($hover-sprite);
+        }
+    }
+}
+
+
+@mixin keyframes( $animationName ) {
+    @-webkit-keyframes $animationName {
+        @content;
+    }
+    @-moz-keyframes $animationName {
+        @content;
+    }
+    @-o-keyframes $animationName {
+        @content;
+    }
+    @keyframes $animationName {
+        @content;
+    }
+}

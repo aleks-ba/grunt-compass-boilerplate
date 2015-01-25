@@ -1,0 +1,75 @@
+/*
+a.copyright .icon {
+    display: block;
+    width: 17px;
+    height: 17px;
+    position: relative;
+    top: -2px;
+    margin-left: 10px;
+    border-radius: 17px;
+    background-color: $logo36-color;
+    background-image: url(../images/36.png);
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+}
+a.copyright .icon span {
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius: 17px;
+    left: 8px;
+    top: 8px;
+    background-color: $logo36-color;
+    background-image: url(../images/36.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include rotate(0deg);
+    z-index: 9002;
+}
+.t {
+    @include single-transition(all, 300ms, ease);
+    z-index: 9002;
+}
+a.copyright:hover .icon {
+    @include rotate(180deg);
+    background-position: -20px -20px;
+}
+a.copyright:hover .icon span{
+    left: 0px;
+    top: 0px;
+    width: 17px;
+    height: 17px;
+    @include rotate(180deg);
+}
+*/
+
+.circle { -moz-border-radius:11px; -webkit-border-radius:11px; -o-border-radius:11px; border-radius:11px; }
+.lt-ie9 .circle { behavior: url(http://oasyswater.com/template/css/border-radius.htc); }
+#link-36 { font-size:11px; color:#fff; text-decoration:none;
+    transition:color .5s ease-in-out;
+    -moz-transition:color .5s ease-in-out;
+    -webkit-transition:color .5s ease-in-out;
+    -o-transition:color .5s ease-in-out;
+}
+#link-36:hover { color:#df463e; }
+#link-36:hover #logo-36 { background-position:top right;
+    transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+}
+#link-36:hover #sub-circle { width:18px; height:18px; margin:0px; }
+#circle-36 { display:inline-block; position:relative; top:6px; width:18px; height:18px; background:$grey; }
+#logo-36 { position:absolute; z-index:1; width:18px; height:18px; background:url(../images/black-36.png) top left no-repeat;
+    transition:background-position .2s ease-in-out, -moz-transform .75s;
+    -moz-transition:background-position .2s ease-in-out, -moz-transform .75s;
+    -webkit-transition:background-position .2s ease-in-out, -webkit-transform .75s;
+    -o-transition:background-position .2s ease-in-out, -o-transform .75s;
+}
+#sub-circle { position:absolute; z-index:0; width:0px; height:0px; margin:11px 0 0 11px; background:#999; border:0px;
+    transition:width .5s ease-in-out, height .5s ease-in-out, margin .5s ease-in-out;
+    -moz-transition:width .5s ease-in-out, height .5s ease-in-out, margin .5s ease-in-out;
+    -webkit-transition:width .5s ease-in-out, height .5s ease-in-out, margin .5s ease-in-out;
+    -o-transition:width .5s ease-in-out, height .5s ease-in-out, margin .5s ease-in-out;
+}
